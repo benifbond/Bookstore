@@ -1,4 +1,4 @@
-// routes/auth.routes.js
+
 
 const { Router } = require('express')
 const router = new Router()
@@ -10,7 +10,7 @@ const saltRounds = 10
 const User = require('../models/User.model')
 
 // GET route ==> to display the signup form to users
-router.get('/signup', (req, res) => res.render('signup'))
+router.get('/signup', (req, res) => res.render('auth/signup'))
 
 // POST route ==> to process form data
 router.post('/signup', (req, res, next) => {
@@ -41,7 +41,7 @@ router.post('/signup', (req, res, next) => {
     .then(salt => bcryptjs.hash(password, salt))
     .then(hashedPassword => {
       return User.create({
-    
+        // username: username
         username,
         email,
        
@@ -49,6 +49,7 @@ router.post('/signup', (req, res, next) => {
       })
     })
     .then(userFromDB => {
+      // console.log("Newly created user is: ", userFromDB);
       res.redirect('/userProfile')
     })
     .catch(error => {
@@ -115,8 +116,10 @@ router.post('/login', (req, res, next) => {
 })
 
 router.get('/userProfile', (req, res) => {
-  res.render('users/user-profile', { userInSession: req.session.currentUser })
+  const currentUser = req.session.currentUser
+  res.render('users/user-profile', { userInSession: currentUser })
 })
+
 
 router.post('/logout', (req, res) => {
   req.session.destroy()
