@@ -160,6 +160,12 @@ header {
 .Notepad:hover .more {
   display: block;
 }
+
+.register{
+ position: absolute;
+  display: block;
+  z-index: 1;
+}
 .Login {
   margin-top: -20px;
   position: relative;
@@ -405,7 +411,7 @@ header {
 
 .container1 {
   background-color: #FFF8DC;
-  width: 80%
+  width: 80%;
     margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -498,21 +504,14 @@ h3 :hover {
 		margin-left: 100%;
 	}
 
-{
-	}
+
 }
 .social-media-icons{
   display: flex;
   flex-direction: column;
 
-
-
 }
-.social-media-icons, i{
 
-
-
-}
 
 @media screen and (max-width:567px) {
   .container {
@@ -606,6 +605,9 @@ h5 {
      color: #d3d3d3;
      height: 400px;
      font-family: inherit;
+    
+     
+     
    }
 
    .footer .footer-bottom {
@@ -616,8 +618,8 @@ h5 {
      text-align: center;
      bottom: 0px;
      left: 0px;
-     padding-top: 20px;
-   }
+    padding-top: 20px;
+  }
    .footer #logo-footer{
      font-family: serif;
    }
@@ -929,5 +931,5 @@ h5 {
    }
    .footer .footer-content .footer-section .links{
      padding-bottom: 0;
-   }
+   }}
 

@@ -10,7 +10,7 @@ const saltRounds = 10
 const User = require('../models/User.model')
 
 // GET route ==> to display the signup form to users
-router.get('/signup', (req, res) => res.render('auth/signup'))
+router.get('/signup', (req, res) => res.render('signup'))
 
 // POST route ==> to process form data
 router.post('/signup', (req, res, next) => {

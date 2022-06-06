@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    
     <link rel="stylesheet" href="stylesheets/style.css">
     <meta charset="utf-8">
     <span class="material-icons-outlined">
@@ -10,7 +11,7 @@
        <script src="https://kit.fontawesome.com/327d4554c8.js" crossorigin="anonymous"></script>
     <title> Books of Insparations</title>
   </head>
-  <body>
+  
     <header>
   <div class="container">
     <div class="nav-icons">
@@ -19,7 +20,7 @@
 
      <div class="top-nav">
       <div class="logo-text">
-      <h1><span>ReDI</span>books</h1><br>
+      <h1><span>REDI</span>books</h1><br>
       <input type="checkbox" name="" value="" id="logo-checkbox">
 
 
@@ -79,17 +80,17 @@
            </div>
            </div>
          </div>
+         <form action="/login" method="POST">
          <div class="Login">
-           <form action="/login" method="POST">
          <i class="far fa-user" ><span >Log In</span></i>
          <div class="more">
           <span>E-mail</span><br>
           <input type="email" name="email"  class="login-email" required>
           <span>Password</span><br>
           <input type="password" name="password" class="login-email" required>
-          <button type="button" class="big-btn"><span>Login</span></button>
+          <button type="submit" class="big-btn"><span>Login</span></button>
         </form>
-          <a href="#"><span class="arrow">⇢</span><span class="N" >Register</span></a><br>
+          <a href="/signup"><span class="arrow">⇢</span><span class="N" >Register</span></a><br>
           <a href="#"><span class="arrow">⇢</span><span class="N">Forgotten your password?</span></a>
          </div>
          </div>
@@ -168,10 +169,10 @@
        </ul>
       </div>
      </div>
-</header>
+
 <%- body %> 
 <!-- Footer -->
-<div class="footer">
+ <div class="footer">
   <div class="footer-content">
     <div class="footer-section about">
       <h1 id="logo-footer"> <span>ReDI</span>books</h1> <br>
@@ -213,15 +214,15 @@
       </button>
 
       </form>
-    </div>
 
+    </div>
+   
   </div>
   <div class="footer-bottom">
     &copy; de.redi-school.org | Designed by ReDI school students
 
   </div>
 </div>
+<script src="./js/script.js"></script>
 
-
-  </body>
 </html>
