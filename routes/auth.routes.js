@@ -8,7 +8,20 @@ const bcryptjs = require('bcryptjs')
 const saltRounds = 10
 
 const User = require('../models/User.model')
+const Book = require('../models/Book.model')
 
+router.get('/books', async (req, res, next) => {
+  let allBooks = await Book.find()
+  console.log("ALL BOOOOOOOkS",allBooks);
+  res.render('movies', { allMovies })
+});
+
+router.get('/books/:id', async (req, res, next) => {
+  let allBooks = await Book.find()
+  let data = res.send(req.params['id'])
+  let book = allBooks[data]
+  res.render('oneBook', { book })
+});
 // GET route ==> to display the signup form to users
 router.get('/signup', (req, res) => res.render('auth/signup'))
 
