@@ -63,3 +63,9 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .card-footer{
+        position:fixed;
+          bottom:0;
+          min-width: 100vw;
+      }
