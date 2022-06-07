@@ -1,4 +1,8 @@
-  body{
+html {
+  box-sizing: border-box;
+}
+
+body{
  text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
