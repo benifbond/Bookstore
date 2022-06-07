@@ -8,25 +8,14 @@ const bcryptjs = require('bcryptjs')
 const saltRounds = 10
 
 const User = require('../models/User.model')
-const Book = require('../models/Book.model')
 
-router.get('/books', async (req, res, next) => {
-  let allBooks = await Book.find()
-  console.log("ALL BOOOOOOOkS",allBooks);
-  res.render('movies', { allMovies })
-});
-
-router.get('/books/:id', async (req, res, next) => {
-  let allBooks = await Book.find()
-  let data = res.send(req.params['id'])
-  let book = allBooks[data]
-  res.render('oneBook', { book })
-});
 // GET route ==> to display the signup form to users
 router.get('/signup', (req, res) => res.render('auth/signup'))
 
-
+// POST route ==> to process form data
 router.post('/signup', (req, res, next) => {
+  // console.log("The form data: ", req.body);
+
   const { username, email, password } = req.body
 
   // make sure users fill all mandatory fields:
@@ -36,6 +25,7 @@ router.post('/signup', (req, res, next) => {
     })
     return
   }
+
   // make sure passwords are strong:
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
   if (!regex.test(password)) {
@@ -51,8 +41,10 @@ router.post('/signup', (req, res, next) => {
     .then(salt => bcryptjs.hash(password, salt))
     .then(hashedPassword => {
       return User.create({
+        // username: username
         username,
         email,
+       
         passwordHash: hashedPassword,
       })
     })
@@ -73,11 +65,17 @@ router.post('/signup', (req, res, next) => {
       }
     }) // close .catch()
 })
+
 //////////// L O G I N ///////////
+
+// GET route ==> to display the login form to users
 router.get('/login', (req, res) => res.render('auth/login'))
 
+// POST login route ==> to process form data
 router.post('/login', (req, res, next) => {
+  console.log('SESSION =====> ', req.session)
   const { email, password } = req.body
+
   if (email === '' || password === '') {
     res.render('auth/login', {
       errorMessage: 'Please enter both, email and password to login.',
@@ -85,18 +83,33 @@ router.post('/login', (req, res, next) => {
     return
   }
 
-  User.findOne({ email }) 
+  User.findOne({ email }) // <== check if there's user with the provided email
     .then(user => {
+      // <== "user" here is just a placeholder and represents the response from the DB
       if (!user) {
-        console.log("no user");
+        // <== if there's no user with provided email, notify the user who is trying to login
         res.render('auth/login', { errorMessage: 'Email is not registered. Try with other email.' })
         return
       }
+      // if there's a user, compare provided password
+      // with the hashed password saved in the database
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
+        // if the two passwords match, render the user-profile.ejs and
+        //                   pass the user object to this view
+        //                                 |
+        //                                 V
+        // res.render("users/user-profile", { user });
+
+        // when we introduce session, the following line gets replaced with what follows:
+        
+        //res.render('users/user-profile', { user });
+
         //******* SAVE THE USER IN THE SESSION ********//
-        req.session.user = user
-  res.redirect('/userProfile')
-} else { console.log("else block error");
+        req.session.currentUser = user
+  res.redirect('/userProfile',{userInSession:req.session.currentUser})
+} else {
+        // if the two passwords DON'T match, render the login form again
+        // and send the error message to the user
         res.render('auth/login', { errorMessage: 'Incorrect password.' })
       }
     })
@@ -107,6 +120,7 @@ router.get('/userProfile', (req, res) => {
   const currentUser = req.session.currentUser
   res.render('users/user-profile', { userInSession: currentUser })
 })
+
 
 router.post('/logout', (req, res) => {
   req.session.destroy()
