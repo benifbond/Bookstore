@@ -7,16 +7,21 @@ body{
   margin: 0px;
   font-family: sans-serif,'Roboto';
   background-color: #F8F8F8;
-  }  
+  } 
+   .navbar {
+     margin: 0px;
+     padding: 20px;
+   }
+   /* LOGIN AND SINGUP FORM */
 .form-signin {
   max-width: 330px;
   padding-top: 90px;
   height: 100%;
 }
+
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
-
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -67,9 +72,9 @@ body{
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-
+/* //////////////FOOTER///////// */
       .card-footer{
-        position:fixed;
+
           bottom:0;
-          min-width: 100vw;
+          min-width: 100%;
       }
