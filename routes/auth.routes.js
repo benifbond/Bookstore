@@ -9,6 +9,7 @@ const saltRounds = 10
 
 const User = require('../models/User.model')
 const Book = require('../models/Book.model')
+const { findById } = require('../models/User.model')
 
 router.get('/books', async (req, res, next) => {
   let allBooks = await Book.find()
@@ -17,10 +18,9 @@ router.get('/books', async (req, res, next) => {
 });
 
 router.get('/books/:id', async (req, res, next) => {
-  let allBooks = await Book.find()
-  let data = res.send(req.params['id'])
-  let book = allBooks[data]
-  res.render('oneBook', { book })
+  const {id} = req.params.id;
+  let book = await Book.findById(id)
+  res.render('/oneBook', { book })
 });
 // GET route ==> to display the signup form to users
 router.get('/signup', (req, res) => res.render('auth/signup'))
@@ -45,7 +45,6 @@ router.post('/signup', (req, res, next) => {
     })
     return
   }
-
   bcryptjs
     .genSalt(saltRounds)
     .then(salt => bcryptjs.hash(password, salt))
@@ -76,7 +75,7 @@ router.post('/signup', (req, res, next) => {
 //////////// L O G I N ///////////
 router.get('/login', (req, res) => res.render('auth/login'))
 
-router.post('/login', (req, res, next) => {
+router.post('/login', async(req, res, next) => {
   const { email, password } = req.body
   if (email === '' || password === '') {
     res.render('auth/login', {
@@ -85,27 +84,28 @@ router.post('/login', (req, res, next) => {
     return
   }
 
-  User.findOne({ email }) 
-    .then(user => {
-      if (!user) {
-        console.log("no user");
+  const user = await User.findOne({ email }) 
+      if (!user?.email) {
         res.render('auth/login', { errorMessage: 'Email is not registered. Try with other email.' })
         return
       }
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
         //******* SAVE THE USER IN THE SESSION ********//
-        req.session.user = user
+        req.session.currentUser = user
   res.redirect('/userProfile')
-} else { console.log("else block error");
+} else { ;
         res.render('auth/login', { errorMessage: 'Incorrect password.' })
       }
+      
     })
-    .catch(error => next(error))
-})
 
 router.get('/userProfile', (req, res) => {
-  const currentUser = req.session.currentUser
-  res.render('users/user-profile', { userInSession: currentUser })
+  const data = {
+    layout: false
+  }
+  const current = req.session.currentUser
+  res.render("users/user-profile", { userInSession: current})
+
 })
 
 router.post('/logout', (req, res) => {
