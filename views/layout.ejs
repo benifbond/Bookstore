@@ -1,165 +1,46 @@
-<%- include ("partials/header") %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
 <body>
-  
-
-  <div class="container">
-    <div class="nav-icons">
-      <i class="fas fa-bars"></i>
-    </div>
-     <div class="top-nav">
-      <div class="logo-text">
-      <h1><span>REDI</span>books</h1><br>
-      <input type="checkbox" name="" value="" id="logo-checkbox">
-
-
-      <div class="mobile-nav">
-        <h3 id="H">Hello, Login</h3>
-        <ul class="one">
-          <a><li>Start page</li></a>
-          <a><li>My account</li></a>
-          <a><li>Custom service</li></a>
-          <a><li>Culture magazine</li></a>
-          <a><li>Events</li></a>
-        </ul>
-        <h3>PRODUCTS</h3>
-        <ul class="two">
-          <li id="B">BERLIN
-            <input type="checkbox" name="" value="" class="Be">
-            <span class="arr">➤</span>
-            <ul class="sub-Berlin">
-
-          <a><li>NEW AND BESTSELLING</li></a>
-          <a ><li>USED BOOKS</li>    </a>
-          <a><li>LIBRARY BERLIN</li></a>
-          <a><li>BERLIN IN FILM</li></a>
-          <a><li>MUSICAL BERLIN</li></a>
-            </ul>
+<!-- /*-////////////////////////////////////////////NAV BAR ////////////////////////////////// -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Bookstore</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-       <a><li>BOOKS <span class="arr">➤</span></li></a>
-      <a><li>eBOOKS &eREADER <span class="arr">➤</span></li></a>
-      <a><li>TEXTBOOKS <span class="arr">➤</span></li></a>
-      <a><li>AUDIOBOOKS <span class="arr">➤</span></li></a>
-      <a><li>MUSIC <span class="arr">➤</span></li></a>
-      <a><li>FILM <span class="arr">➤</span></li></a>
-      <a><li>SHEET MUSIC <span class="arr">➤</span></li></a>
-      <a><li>GIFTCARD <span class="arr">➤</span></li></a>
-        </ul>
-
-        <div class="opacity">
-          <i class="far fa-times-circle"></i>
-        </div>
-      </div>
-
-      </div>
-
-      <div class="Search">
-           <input type="text" class="header-Search" placeholder="Title, Authur, ISBN..">
-              <i class="fas fa-search"></i>
-      </div>
-
-       <div class="right-side">
-         <div class="Notepad">
-         <i class="far fa-heart"><span>Notepad</span></i>
-           <div class="more">
-             <div class="sub-notepad">
-           <h4>Notepad<span>(0)</span></h4>
-           <span>The notepad is empty.</span>
-           </div>
-           </div>
-         </div>
-
-         <form action="/login" method="POST">
-         <div class="Login">
-         <i class="far fa-user" ><span >Log In</span></i>
-         <div class="more">
-          <span>E-mail</span><br>
-          <input type="email" name="email"  class="login-email" required>
-          <span>Password</span><br>
-          <input type="password" name="password" class="login-email" required>
-          <button type="submit" class="big-btn btn-primary"><span>Login</span></button>
-        </form>
-      
-          <a href="/signup"><span class="arrow">⇢</span><span class="N" >Register</span></a><br>
-          <a href="#"><span class="arrow">⇢</span><span class="N">Forgotten your password?</span></a>
-         </div>
-         </div>
-         <div class="basket">
-          <i class="fas fa-2x fa-cart-arrow-down"></i>
-         <span>EUR</span><p>0,00</p>
-         <!-- <input type="checkbox" name="" value=""> -->
-         <div class="more">
-           <div class="sub-basket">
-           <p>The basket is empty.</p>
-           <span>Free delivery</span> <br>
-           <button type="" class="big-btn">
-           <i class="fas fa-cart-arrow-down"></i>
-           <b>BASKET</b>
-         </button>
-             </div>
-           </div>
-         </div>
-       </div>
-   </div>
-
-  <div class="bottom-nav">
-   <ul class="nav-list">
-   <li><a href="#">Browse ▾
-   </a>
-     <ul class="sub-Browse">
-       <li><a href="#">New Arrivals</a>
-       </li>
-       <li><a href="#">Best Sellers</a>
-       </li>
-       <li><a href="#">Award Winners</a>
-       </li>
-       <li><a href="#">Digital Audio Books ▾
-       </a>
-         <ul class="sub-Browse">
-           <li><a href="#">New Arrivals</a>
-           </li>
-           <li><a href="#">Best Sellers</a>
-           </li>
-           <li><a href="#">Award Winners</a>
-           </li>
-           <li><a href="#">Digital Audio Books ▾
-           </a>
-             <ul class="sub-Browse">
-               <li><a href="#">New Arrivals</a>
-               </li>
-               <li><a href="#">Best Sellers</a>
-                     </li>
-                     <li><a href="#">Award Winners</a>
-                     </li>
-                     <li><a href="#">Digital Audio Books</a>
-                     </li>
-                     <li><a href="#">See All Subjects</a>
-                     </li>
-                   </ul>
-                 </li>
-                 <li><a href="#">See All Subjects</a>
-                 </li>
-               </ul>
-             </li>
-             <li><a href="#">See All Subjects</a>
-             </li>
-           </ul>
-         </li>
-
-         <li><a href="used.html">Used</a>
-         </li>
-         <li><a href="#">Blog</a>
-         </li>
-         <li><a href="#">Sell Books</a>
-         </li>
-         <li><a href="#">Events</a>
-         </li>
-         <li><a href="#">Find a Store</a>
-         </li>
-       </ul>
-      </div>
-     </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <%- body %> 
+<!-- ////////////////////////////////footer section//////////////////////////////// -->
+<div class="card-footer">
+  2 days ago
+</div>
 </body>
-<!-- Footer -->
- <%-include("partials/footer.ejs") %> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

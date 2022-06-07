@@ -101,12 +101,13 @@ router.post('/login', (req, res, next) => {
         // res.render("users/user-profile", { user });
 
         // when we introduce session, the following line gets replaced with what follows:
-        // res.render('users/user-profile', { user });
+        
+        //res.render('users/user-profile', { user });
 
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user
-        res.redirect('/userProfile')
-      } else {
+  res.redirect('/userProfile',{userInSession:req.session.currentUser})
+} else {
         // if the two passwords DON'T match, render the login form again
         // and send the error message to the user
         res.render('auth/login', { errorMessage: 'Incorrect password.' })
