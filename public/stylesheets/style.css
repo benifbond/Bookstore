@@ -162,9 +162,52 @@ header {
 }
 
 .register{
- position: absolute;
+  position: absolute;
   display: block;
-  z-index: 1;
+  z-index: 10;
+  margin-left: 1324px;
+  margin-top: 20px;
+}
+
+.register .more {
+  position: absolute;
+  display: none;
+  height: 314px;
+  width: 210px;
+  background-color: white;
+  right: -5px;
+  padding-top: 38px;
+  padding-left: 15px;
+  z-index: 5;
+  border: 1px solid #e8e8e8;
+}
+.register:hover .more{
+  display: block;
+}
+.register:hover .fa-user {
+  background-color: white;
+  border: 1px solid #e8e8e8;
+}
+.register .more span {
+  font-size: 17px;
+  font-family: serif;
+}
+.register .more .login-email {
+  height: 20px;
+  width: 175px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.register .more .big-btn {
+  padding: 10px;
+  background-color: #D00000;
+  color: white;
+  height: 42px;
+  width: 182px;
+  border: 1px solid transparent;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  font-family: sans-serif;
 }
 .Login {
   margin-top: -20px;
