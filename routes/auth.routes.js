@@ -5,10 +5,9 @@ const router = new Router()
 const mongoose = require('mongoose') // <== has to be added
 const bcryptjs = require('bcryptjs')
 const saltRounds = 10
-
 const Book = require('../models/Book.model')
 const User = require('../models/User.model')
-const Book = require('../models/Book.model')
+
 const { findById } = require('../models/User.model')
 
 router.get('/books', async (req, res, next) => {

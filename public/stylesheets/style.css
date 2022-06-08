@@ -3,6 +3,7 @@ html {
 }
 
 body{
+  background: red;
  text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
@@ -80,4 +81,12 @@ body{
       /* ///////////BENIAH LOGO ////////// */
 .logo{
   width:100px
+}
+
+.oneBook {
+  margin-left: 150px;
+  margin-top: 60px;
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
 }
