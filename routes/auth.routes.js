@@ -1,10 +1,12 @@
 const { Router } = require('express')
 const router = new Router()
 
+
 const mongoose = require('mongoose') // <== has to be added
 const bcryptjs = require('bcryptjs')
 const saltRounds = 10
 
+const Book = require('../models/Book.model')
 const User = require('../models/User.model')
 const Book = require('../models/Book.model')
 const { findById } = require('../models/User.model')
@@ -90,14 +92,22 @@ router.post('/login', async(req, res, next) => {
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user
+<<<<<<< HEAD
         console.log(req.session, user)
   res.redirect('/userProfile')
 } else { ;
+=======
+  res.redirect('/userProfile')
+} else {
+        // if the two passwords DON'T match, render the login form again
+        // and send the error message to the user
+>>>>>>> origin/views
         res.render('auth/login', { errorMessage: 'Incorrect password.' })
       }
       
     })
 
+<<<<<<< HEAD
 router.get('/userProfile', (req, res) => {
   const data = {
     layout: false
@@ -107,6 +117,29 @@ router.get('/userProfile', (req, res) => {
   res.render("users/user-profile", { userInSession: current})
 
 })
+=======
+router.get('/userProfile', async (req, res) => {
+  const currentUser = req.session.currentUser;
+  let allBooks = await Book.find()
+  const userBooks = {
+    currentUser,
+    allBooks
+  }
+  console.log(userBooks)
+  res.render('users/user-profile', { userBooks })
+  
+})
+
+router.get('/book/:id', async (req, res, next) => {
+  
+  const bookId = req.params.id
+  let oneBook = await Book.findById(bookId)
+  console.log(oneBook)
+ 
+  res.render('oneBook', { oneBook })
+});
+
+>>>>>>> origin/views
 
 router.post('/logout', (req, res) => {
   req.session.destroy()
