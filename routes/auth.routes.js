@@ -9,17 +9,7 @@ const User = require('../models/User.model')
 const Book = require('../models/Book.model')
 const { findById } = require('../models/User.model')
 
-router.get('/books', async (req, res, next) => {
-  let allBooks = await Book.find()
-  console.log("ALL BOOOOOOOkS",allBooks);
-  res.render('movies', { allMovies })
-});
 
-router.get('/books/:id', async (req, res, next) => {
-  const {id} = req.params.id;
-  let book = await Book.findById(id)
-  res.render('/oneBook', { book })
-});
 // GET route ==> to display the signup form to users
 router.get('/signup', (req, res) => res.render('auth/signup'))
 
@@ -55,7 +45,7 @@ router.post('/signup', (req, res, next) => {
     })
     .then(userFromDB => {
       // console.log("Newly created user is: ", userFromDB);
-      res.redirect('/userProfile')
+      res.redirect('/login')
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -99,11 +89,7 @@ router.post('/login', async(req, res, next) => {
     })
 
 router.get('/userProfile', (req, res) => {
-  const data = {
-    layout: false
-  }
   const current = req.session.currentUser
-  console.log("HIEER", current, req.session)
   res.render("users/user-profile", { userInSession: current})
 
 })
