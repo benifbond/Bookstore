@@ -3,7 +3,7 @@ html {
 }
 
 body{
- text-align: center;
+  text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
   background-color: #F8F8F8;
@@ -12,14 +12,12 @@ body{
      margin: 0px;
      padding: 20px;
    }
-   
    /* LOGIN AND SINGUP FORM */
 .form-signin {
   max-width: 330px;
   padding-top: 90px;
   height: 100%;
 }
-
 
     
 
@@ -84,26 +82,10 @@ body{
   width:100px
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.userProfileImage{
-  width:450px;
-  height: 500px;
-  object-fit: cover;
+.oneBook {
+  margin-left: 150px;
+  margin-top: 60px;
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
 }
