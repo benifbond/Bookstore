@@ -92,32 +92,15 @@ router.post('/login', async(req, res, next) => {
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user
-<<<<<<< HEAD
-        console.log(req.session, user)
-  res.redirect('/userProfile')
-} else { ;
-=======
   res.redirect('/userProfile')
 } else {
         // if the two passwords DON'T match, render the login form again
         // and send the error message to the user
->>>>>>> origin/views
         res.render('auth/login', { errorMessage: 'Incorrect password.' })
       }
       
     })
 
-<<<<<<< HEAD
-router.get('/userProfile', (req, res) => {
-  const data = {
-    layout: false
-  }
-  const current = req.session.currentUser
-  console.log("HIEER", current, req.session)
-  res.render("users/user-profile", { userInSession: current})
-
-})
-=======
 router.get('/userProfile', async (req, res) => {
   const currentUser = req.session.currentUser;
   let allBooks = await Book.find()
@@ -139,7 +122,6 @@ router.get('/book/:id', async (req, res, next) => {
   res.render('oneBook', { oneBook })
 });
 
->>>>>>> origin/views
 
 router.post('/logout', (req, res) => {
   req.session.destroy()
