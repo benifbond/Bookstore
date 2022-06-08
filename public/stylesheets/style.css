@@ -12,12 +12,14 @@ body{
      margin: 0px;
      padding: 20px;
    }
+   
    /* LOGIN AND SINGUP FORM */
 .form-signin {
   max-width: 330px;
   padding-top: 90px;
   height: 100%;
 }
+
 
     
 
@@ -80,4 +82,28 @@ body{
       /* ///////////BENIAH LOGO ////////// */
 .logo{
   width:100px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.userProfileImage{
+  width:450px;
+  height: 500px;
+  object-fit: cover;
 }
