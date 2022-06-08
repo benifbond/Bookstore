@@ -92,6 +92,7 @@ router.post('/login', async(req, res, next) => {
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user
+        console.log(req.session, user)
   res.redirect('/userProfile')
 } else { ;
         res.render('auth/login', { errorMessage: 'Incorrect password.' })
@@ -104,6 +105,7 @@ router.get('/userProfile', (req, res) => {
     layout: false
   }
   const current = req.session.currentUser
+  console.log("HIEER", current, req.session)
   res.render("users/user-profile", { userInSession: current})
 
 })
