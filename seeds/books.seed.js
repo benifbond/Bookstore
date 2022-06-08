@@ -1,11 +1,11 @@
 const books = [
     {
-      title: 'A Wrinkle in Time',
-      author: 'Augustus Caesar',
+      title: 'The Usborne Book of World History',
+      author: 'Jenny Tyler',
       image:
-        'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+        'https://www.sonlight.com/images/products/CH02-l.jpg',
       description:
-        "Begin your journey with the castle of history",
+        "Presents an introduction to world history, from prehistoric peoples through ancient civilizations to the early twentieth century, focusing on the varying cultures, art, and daily life of civilizations throughout history.",
     },
     {
         title: 'A Wrinkle in Time',
@@ -16,52 +16,52 @@ const books = [
           "Begin your journey with the castle of history",
     },
     {
-        title: 'A Wrinkle in Time',
-        author: 'Augustus Caesar',
+        title: 'Very Nice',
+        author: 'Maria Rinkel',
         image:
-          'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+          'https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-july-2019/large/bbcjuly19verynice.jpg?1384968217',
         description:
           "Begin your journey with the castle of history",
     },
     {
-        title: 'A Wrinkle in Time',
+        title: 'Shutter Stock',
         author: 'Augustus Caesar',
         image:
-          'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+          'https://image.shutterstock.com/image-vector/vintage-book-cover-vector-illustration-600w-685836277.jpg',
         description:
           "Begin your journey with the castle of history",
     },
     {
-        title: 'A Wrinkle in Time',
-        author: 'Augustus Caesar',
+        title: 'Brother Karamazov',
+        author: 'Feodor Dostoevsky',
         image:
-          'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+          'images/BroKa.png',
         description:
-          "Begin your journey with the castle of history",
+          "Completed only two months before his death, The Brothers Karamazov is Dostoevsky's largest, most expanisve, most life-embracing work.Filled with human passions -- lust, greed, love, jealousy, sorrow and humor -- the book is also infused with moral issues and the issue of collective guilt. As in many of Dostoevsky's novels, the plot centers on a murder.",
     },
     {
-        title: 'A Wrinkle in Time',
-        author: 'Augustus Caesar',
+        title: 'The War Between Us',
+        author: 'Sara Lee',
         image:
-          'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+          'https://m.media-amazon.com/images/I/51kjvCihacL.jpg',
         description:
-          "Begin your journey with the castle of history",
+          "Alex Moon is not the enemy. Six months after Pearl Harbor's tragedy, Korean American Alex Moon is sent away from his home in California for refusing his father's request to join the fight against the Japanese. On his journey, Alex is attacked and stranded in the small town of River Bluff, Indiana. To everyone surrounding him, he looks like the enemy.",
     },
     {
-        title: 'A Wrinkle in Time',
-        author: 'Augustus Caesar',
+        title: 'Prospect Of A Woman',
+        author: 'Vendy Voorsanger',
         image:
-          'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+          'https://img.buzzfeed.com/buzzfeed-static/static/2020-08/25/0/asset/81d098e7de23/sub-buzz-12918-1598313727-5.jpg?downsize=600',
         description:
-          "Begin your journey with the castle of history",
+          "Elisabeth Parker comes to California from Massachusetts in 1849 with her new husband, Nate, to reunite with her father, who’s struck gold on the American River. But she soon realizes her husband is not the man she thought―and neither is her father, who abandons them shortly after they arrive. As Nate struggles with his sexuality, Elisabeth is forced to confront her preconceived notions of family, love, and opportunity. She finds comfort in corresponding with her childhood friend back home, writer Louisa May Alcott, and spending time in the company of a mysterious California",
     },
     {
-        title: 'A Wrinkle in Time',
-        author: 'Augustus Caesar',
+        title: 'Untenrum Frei',
+        author: 'Margarete Stokowski',
         image:
-          'https://allthatsinteresting.com/wordpress/wp-content/uploads/2019/11/age-of-augustus-cover.png',
+          'https://images-eu.ssl-images-amazon.com/images/I/41KpQOZJfuS._SY264_BO1,204,203,200_QL40_ML2_.jpg',
         description:
-          "Begin your journey with the castle of history",
+          "SEX. MACHT. SPASS. UND PROBLEME. In ihrem Debüt «Untenrum frei» schreibt die Autorin und Spiegel-Online-Kolumnistin Margarete Stokowski über die kleinen schmutzigen Dinge und über die großen Machtfragen. Es geht darum, wie die Freiheit im Kleinen mit der Freiheit im Großen zusammenhängt, und am Ende wird deutlich: Es ist dieselbe. Mit scharfsinnigem Blick auf die Details gelingt ihr ein persönliches, provokantes und befreiendes Buch.",
     },
   ]
 

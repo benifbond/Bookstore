@@ -3,10 +3,12 @@
 const { Router } = require('express')
 const router = new Router()
 
+
 const mongoose = require('mongoose') // <== has to be added
 const bcryptjs = require('bcryptjs')
 const saltRounds = 10
 
+const Book = require('../models/Book.model')
 const User = require('../models/User.model')
 
 // GET route ==> to display the signup form to users
@@ -106,7 +108,7 @@ router.post('/login', (req, res, next) => {
 
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user
-  res.redirect('/userProfile',{userInSession:req.session.currentUser})
+  res.redirect('/userProfile')
 } else {
         // if the two passwords DON'T match, render the login form again
         // and send the error message to the user
@@ -116,10 +118,26 @@ router.post('/login', (req, res, next) => {
     .catch(error => next(error))
 })
 
-router.get('/userProfile', (req, res) => {
-  const currentUser = req.session.currentUser
-  res.render('users/user-profile', { userInSession: currentUser })
+router.get('/userProfile', async (req, res) => {
+  const currentUser = req.session.currentUser;
+  let allBooks = await Book.find()
+  const userBooks = {
+    currentUser,
+    allBooks
+  }
+  console.log(userBooks)
+  res.render('users/user-profile', { userBooks })
+  
 })
+
+router.get('/book/:id', async (req, res, next) => {
+  
+  const bookId = req.params.id
+  let oneBook = await Book.findById(bookId)
+  console.log(oneBook)
+ 
+  res.render('oneBook', { oneBook })
+});
 
 
 router.post('/logout', (req, res) => {
