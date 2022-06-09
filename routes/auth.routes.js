@@ -95,7 +95,7 @@ router.get("/userProfile", async (req, res) => {
     currentUser,
     allBooks
   }
-  console.log(userBooks)
+  // console.log(userBooks)
   res.render("users/user-profile", { userBooks })
 })
 
@@ -119,14 +119,25 @@ router.get("/book/:id/edit", (req, res, next) => {
     .catch((err) => console.log("Err while getting one book: ", err));
 });
 
-// localhost:3000/celebrities/:id/edit => the POST route will use the information from the form to update the element in the collection
-router.post("/book/:id/edit", (req, res, next) => {
+router.post("/book/:id/edit", fileUploader.single("image"), (req, res, next) => {
   const { id } = req.params
+  console.log(id, req.body)
+  const {title,author,description}=req.body
+  console.log(req.file, req.file)
+  let edited;
+  if(!req.file) {
+    edited = {title,author,description}
+  } else {
+    const image = req.file.path
+    edited = {
+     title,author,description,image
+  }}
+Book.updateOne({_id: id}, edited)
+
+.then((editBook) => {
+  console.log("edited book: ", editBook);
   
-Book.findByIdAndUpdate(id, req.body, {new: true})
-.then((editeBook) => {
-  console.log("edited book: ", editeBook);
-  res.redirect("/book/:id")
+  res.redirect("/userProfile")
 })
 .catch((err) => console.log("Err while updatg¡ing a celebrity: ", err));
  })
