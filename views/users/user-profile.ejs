@@ -24,3 +24,130 @@
 
        
    
+      <h1>Welcome</h1>
+    
+      <div> <h2><%=userBooks.currentUser.username %></h2></div>
+      <section>
+        <div class="wrapper">
+      <% userBooks.allBooks.forEach(book => { %>
+        <div class="gallery">
+          <div class="gallery-items item1">
+            <a href="#" class="gallery-links">
+          <img class="gallery-img"src="<%= book.image %>" alt="one">
+           <div class="icon">
+           <i class="far fa-heart"></i>
+          <h5><a href="/book/<%= book._id %>"> <%= book.title %></a></h5>
+          </div>
+          </a>
+          </div>
+
+      <% }) %>
+        </div>
+       </section>
+          <!-- <div class="gallery">
+            <div class="gallery-items item1">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img"src="https://cdn.flipsnack.com/template/2121/medium.webp?v=1601365435" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+  
+            <div class="gallery-items item2">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img" src="https://www.sonlight.com/images/products/CH02-l.jpg" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+  
+            <div class="gallery-items item3">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img" src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-july-2019/large/bbcjuly19verynice.jpg?1384968217" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+  
+            <div class="gallery-items item4">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img" src="https://image.shutterstock.com/image-vector/vintage-book-cover-vector-illustration-600w-685836277.jpg" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+  
+            <div class="gallery-items item5">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img" src="https://m.media-amazon.com/images/I/51kjvCihacL.jpg" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+  
+            <div class="gallery-items item6">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img" src="https://img.buzzfeed.com/buzzfeed-static/static/2020-08/25/0/asset/81d098e7de23/sub-buzz-12918-1598313727-5.jpg?downsize=600:*&output-format=auto&output-quality=autos" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+            <div class="gallery-items item7">
+              <a href="#" class="gallery-links">
+            <img class="gallery-img" src="https://images-eu.ssl-images-amazon.com/images/I/41KpQOZJfuS._SY264_BO1,204,203,200_QL40_ML2_.jpg" alt="one">
+             <div class="icon">
+             <i class="far fa-heart"></i>
+            <h5>Romen with good situation</h5>
+            </div>
+            </a>
+            </div>
+            <div class="gallery-items item8">
+            <h3>Romen with good situation</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+               nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+  
+            </div>
+  
+  
+            </div>
+  
+               </div>
+  
+      </section> 
+      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+  
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"> <a href="/books"> Add books</a> </button>
+                  </div>
+                  
+              
+                </div>
+              </div>
+            </div>
+          </div>
+          </div> -->
+
+  
