@@ -1,8 +1,8 @@
 <main class="form-signin w-150 m-auto">
-    <form action="/books" method="POST"  enctype="multipart/form-data" >
-      <h1 class="h3 mb-3 fw-normal">Add Book</h1>
+    <form action="/new" method="POST"  enctype="multipart/form-data" >
+      <h1 class="h3 mb-3 fw-normal">Add new Book</h1>
       <div class="form-floating">
-        <input type="text" class="form-control" name="title"  placeholder="title" aria-label="title" required>
+        <input type="text" class="form-control" name="title" placeholder="title" aria-label="title" required>
         <label>Title</label>
       </div>
       <div class="form-floating">
@@ -10,13 +10,13 @@
         <label >Author</label>
       </div>
       <div class="form-floating">
-        <input type="file" class="form-control" name="image" placeholder="file" required>
+        <input type="file" class="form-control" name="image"  placeholder="file" >
       </div>
       <div class="mb-4 m-auto" >
         <label for="exampleFormControlTextarea1"  class="form-label">Description </label>
-        <textarea class="form-control"  name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control"  name="description"  id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Upload</button>
+      <button class="w-100 btn btn-lg btn-primary" type="submit"><a href="/userProfile">Upload</a></button>
       <% if(typeof errorMessage !== 'undefined'){%>
         <p class="mt-5 mb-3 text-muted"><%= errorMessage %></p>
         <% } %> 

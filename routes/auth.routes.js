@@ -12,7 +12,7 @@ const { findById } = require("../models/User.model")
 router.get("/books", async (req, res, next) => {
   let allBooks = await Book.find()
   
-  res.render("movies", { allMovies })
+  // res.render("movies", { allMovies }) ???
 });
 router.get("/books/:id", async (req, res, next) => {
   const {id} = req.params.id;
@@ -101,6 +101,7 @@ router.get("/userProfile", async (req, res) => {
   console.log(userBooks)
   res.render("users/user-profile", { userBooks })
 })
+
 router.get("/book/:id", async (req, res, next) => {
   const bookId = req.params.id
   let oneBook = await Book.findById(bookId)
@@ -111,4 +112,61 @@ router.post("/logout", (req, res) => {
   req.session.destroy()
   res.redirect("/")
 })
-module.exports = router 
+
+
+router.get("/book/:id/edit", (req, res, next) => {
+  const { id } = req.params 
+
+  Book.findById(id)
+    .then((oneBook) => res.render("users/books/edit.ejs", { oneBook }))
+    .catch((err) => console.log("Err while getting one book: ", err));
+});
+
+// localhost:3000/celebrities/:id/edit => the POST route will use the information from the form to update the element in the collection
+router.post("/book/:id/edit", (req, res, next) => {
+  const { id } = req.params
+  
+Book.findByIdAndUpdate(id, req.body, {new: true})
+.then((editeBook) => {
+  console.log("edited book: ", editeBook);
+  res.redirect("/book/:id")
+})
+.catch((err) => console.log("Err while updatg¡ing a celebrity: ", err));
+ })
+router.post("/:id/delete", (req, res, next) => {
+  const { id } = req.params 
+
+  Book.findByIdAndRemove(id)
+    .then((deletedBook) => {
+      console.log("Deleted celeb: ", deletedBook);
+      res.redirect("/")
+    })
+    .catch((err) => console.log("Err while deleting a celebrity: ", err));
+});
+
+
+router.get("/:id/delete", (req, res, next) => {
+  const { id } = req.params 
+
+
+  Book.findByIdAndRemove(id)
+    .then((deletedBook) => {
+      console.log("Deleted celeb: ", deletedBook);
+      res.redirect("/userProfile")
+    })
+    .catch((err) => console.log("Err while deleting a celebrity: ", err));
+});
+
+router.get("/new", (req, res, next) => {
+  res.render("users/books/create.ejs"); 
+});
+router.post("/new", (req, res, next) => {
+  // we can use the whole req.body to create the celebrity because the input field names match the model keys. (see celebrity-new-form.hbs and Celebrity.js model)
+  Celebrity.create(req.body)
+    .then((newBook) => {
+      console.log("New added book: ", newBook);
+      res.redirect("/userProfile") // in res.redirect() we always start with '/'. this is what will be un the URL after localhost:3000
+    })
+    .catch((err) => console.log("Err while creating new celebrity: ", err));
+  });
+module.exports = router
