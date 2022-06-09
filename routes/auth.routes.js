@@ -154,19 +154,19 @@ router.get("/:id/delete", (req, res, next) => {
     .catch((err) => console.log("Err while deleting a celebrity: ", err));
 });
 
-router.get("/new", (req, res, next) => {
-  res.render("users/books/create.ejs"); 
-});
-router.post("/new", (req, res, next) => {
-  // we can use the whole req.body to create the celebrity because the input field names match the model keys. (see celebrity-new-form.hbs and Celebrity.js model)
-  Celebrity.create(req.body)
-    .then((newBook) => {
-      console.log("New added book: ", newBook);
-      res.redirect("/userProfile") // in res.redirect() we always start with '/'. this is what will be un the URL after localhost:3000
-    })
-    .catch((err) => console.log("Err while creating new celebrity: ", err));
-  });
-module.exports = router
+// router.get("/new", (req, res, next) => {
+//   res.render("users/books/create.ejs"); 
+// });
+// router.post("/new", (req, res, next) => {
+//   // we can use the whole req.body to create the celebrity because the input field names match the model keys. (see celebrity-new-form.hbs and Celebrity.js model)
+//   Celebrity.create(req.body)
+//     .then((newBook) => {
+//       console.log("New added book: ", newBook);
+//       res.redirect("/userProfile") // in res.redirect() we always start with '/'. this is what will be un the URL after localhost:3000
+//     })
+//     .catch((err) => console.log("Err while creating new celebrity: ", err));
+//   });
+// module.exports = router
 ////////EXPERIMENT////////
 
 
@@ -206,7 +206,9 @@ router.post("/addBooks", fileUploader.single("image"), (req, res, next) =>{
 res.redirect("/userProfile")
 })
 .catch((err) =>{
+  console.log("Error", err)
 next(err)
+
 })
 })
 
