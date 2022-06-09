@@ -3,7 +3,7 @@ html {
 }
 
 body{
- text-align: center;
+  text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
   background-color:#FDF7FF
@@ -12,14 +12,12 @@ body{
      margin: 0px 30px 30px 30px;
      padding: 10px 30px 40px 40px;
    }
-   
    /* LOGIN AND SINGUP FORM */
 .form-signin {
   max-width: 330px;
   padding-top: 90px;
   height: 100%;
 }
-
 
     
 
@@ -84,26 +82,53 @@ body{
   width:100px
 }
 
+.oneBook {
+    margin: 70px;
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+}
+.book-img{
+  margin-right: 70px;
 
+}
 
+.oneBook-btn .bor{
+  background: #ff5f5f;
+  font-size: 20px;
+  font-weight: 600;
+  color: #252526;
+  padding: 5px;
+  width: 170px;
+  border: #ff5f5f;
+}
+.oneBook-btn .bor:hover {
+  color: white;
+  width: 170px;
+}
 
+.oneBook-btn .insert{
+  background: #ffedf4;
+  font-size: 20px;
+  font-weight: 600;
+  color: #252526;
+  width: 170px;
+  border: #1f1f1f;
+  padding: 5px;
+  margin-left: 17px;
+}
+.oneBook-btn .insert:hover{
+color: tomato;
+}
+.cart{
+  width: 250px;
+  float: right;
+  text-align: center;
+  border: 1px solid black;
+  overflow-y: scroll;
+  height: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.userProfileImage{
-  width:450px;
-  height: 500px;
-  object-fit: cover;
+.cartImg {
+  width: 200px;
 }

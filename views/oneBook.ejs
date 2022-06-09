@@ -1,2 +1,21 @@
-<h1> <%= oneBook.title  %> </h1>
+<div class="oneBook">
+    <div class="book-img">
+  <img src=" <%= oneBook.image %>" alt="">
+</div>
+  <div class="text">
+    <h1 class="title"> <%= oneBook.title  %> </h1>
+    <h3 class="author"> <%= oneBook.author  %> </h3>
+    <p class="description"><%= oneBook.description %></p>
+  </div>
+  <div class="cart" id="cart">
+    <div class="title-C">cart</div>
+    <div id="title-C"></div>
+</div>
+</div>
+
+<div class="oneBook-btn">
+<button class="bor" onclick="addToCart(oneBook)">BORROW</button> 
+  <button class="insert">INSERT</button>
+</div>
+
 

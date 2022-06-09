@@ -85,11 +85,11 @@ router.post("/login", async(req, res, next) => {
       else if (bcryptjs.compareSync(password, user.passwordHash)) {
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user
-  res.redirect("/userProfile")
+  res.redirect('/userProfile')
 } else {
         // if the two passwords DON"T match, render the login form again
         // and send the error message to the user
-        res.render("auth/login", { errorMessage: "Incorrect password." })
+        res.render('auth/login', { errorMessage: 'Incorrect password.' })
       }
     })
 router.get("/userProfile", async (req, res) => {
