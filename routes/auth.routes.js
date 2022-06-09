@@ -1,5 +1,6 @@
 const { Router } = require("express")
 const router = new Router()
+const fileUploader = require("../config/cloudinary.config")
 
 
 const mongoose = require("mongoose") // <== has to be added
@@ -9,11 +10,7 @@ const Book = require("../models/Book.model")
 const User = require("../models/User.model")
 
 const { findById } = require("../models/User.model")
-router.get("/books", async (req, res, next) => {
-  let allBooks = await Book.find()
-  
-  // res.render("movies", { allMovies }) ???
-});
+
 router.get("/books/:id", async (req, res, next) => {
   const {id} = req.params.id;
   let book = await Book.findById(id)
@@ -170,3 +167,54 @@ router.post("/new", (req, res, next) => {
     .catch((err) => console.log("Err while creating new celebrity: ", err));
   });
 module.exports = router
+////////EXPERIMENT////////
+
+
+
+
+router.get('/books',  (req, res, next) => {
+  res.render('users/books/addBooks')
+});
+
+// router.post('/books' , async(req, res) =>{
+//     const createBook = await Book.create(req.body)
+//     console.log("this is the created book",createBook);
+//   res.redirect("/addBooks",createBook )
+// })
+// router.get("/addBooks",(req, res)=>{
+//   res.render("users/books/books")
+//})
+
+// router.get('/books/:id', async (req, res, next) => {
+//   let allBooks = await Book.find()
+//   let data = res.send(req.params['id'])
+//   let book = allBooks[data]
+//   res.render('oneBook', { book })
+// });
+router.post("/addBooks", fileUploader.single("image"), (req, res, next) =>{
+  const {title,author,description}=req.body
+  console.log("here is the reqbody and here is the req file",req.body,req.file);
+  Book.create({
+   title,
+    author,
+    description,
+  // information provided in the body of our create form
+	image: req.file.path // cloudinary will send us the url of the image in the req.file.path. Once that you upload an image in your create form and the element  is created , If you console.log(req.file) you will be able to see how the information of our image is provided in your console.
+})
+.then((createdBook) =>{
+  console.log("this is the created book",createdBook);
+res.redirect("/userProfile")
+})
+.catch((err) =>{
+next(err)
+})
+})
+
+
+
+
+
+
+
+
+module.exports = router 
