@@ -1,10 +1,20 @@
 <div class="oneBook">
     <div class="book-img">
-  <img src=" <%= oneBook.image %>" alt="">
+  <a 
+  class="book-container"
+  rel="noreferrer noopener"
+>
+  <div class="book">
+    <img class="userProfileImage img-fluid rounded-start"
+      alt="bookCover"
+      src="<%= oneBook.image %>"
+      />
+  </div>
+</a>
 </div>
   <div class="text">
-    <h1 class="title"> <%= oneBook.title  %> </h1>
-    <h3 class="author"> <%= oneBook.author  %> </h3>
+    <h3 class="title"> <%= oneBook.title  %> </h3>
+    <h5 class="author"> <%= oneBook.author  %> </h5>
     <p class="description"><%= oneBook.description %></p>
   </div>
   <div class="cart" id="cart">
@@ -12,10 +22,12 @@
     <div id="title-C"></div>
 </div>
 </div>
-
+<form action="/<%= oneBook._id %>/delete">
 <div class="oneBook-btn">
-<button class="bor" onclick="addToCart(oneBook)"><a href="/<%= oneBook._id %>/delete">BORROW</a></button> 
-  <button class="insert"> <a href="/books">INSERT</a></button>
+<button class="bor" type="submit"  onclick="addToCart(oneBook)">Borrow</button> 
+</form>
+<form action="/books">
+  <button class="insert" type="submit">Insert</button>
 </div>
-
+</form>
 
