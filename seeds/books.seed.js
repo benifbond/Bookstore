@@ -63,6 +63,14 @@ const books = [
         description:
           "SEX. MACHT. SPASS. UND PROBLEME. In ihrem Debüt «Untenrum frei» schreibt die Autorin und Spiegel-Online-Kolumnistin Margarete Stokowski über die kleinen schmutzigen Dinge und über die großen Machtfragen. Es geht darum, wie die Freiheit im Kleinen mit der Freiheit im Großen zusammenhängt, und am Ende wird deutlich: Es ist dieselbe. Mit scharfsinnigem Blick auf die Details gelingt ihr ein persönliches, provokantes und befreiendes Buch.",
     },
+    {
+      title: 'Prisoners of Geography',
+      author: 'Jim Marshall',
+      image:
+        'images/Prisoners.png',
+      description:
+        "Discover The Ten Maps That Reveal The Future Of Our World In The Power Of Geography – The Sequel To Prisoners Of Geography – Out Now* ___ The Million Copy International Bestsellergeography Shapes Not Only Our History, But Where We'Re Headed... All Leaders Are Constrained By Geography. Their Choices Are Limited By Mountains, Rivers, Seas And Concrete. Yes, To Follow World Events You Need To Understand People, Ideas And Movements - But If You Don'T Know Geography, You'Ll Never Have The Full Picture.If You'Ve Ever Wondered Why Putin Is So Obsessed With Crimea, Why The Usa Was Destined To Become A Global Superpower, Or Why China'S Power Base Continues To Expand Ever Outwards, The Answers Are All Here. In Ten Chapters And Ten Maps, Prisoners Of Geography Looks At The Past, Present And Future To Offer An Essential Insight Into One Of The Major Factors That Determines World History. It'S Time To Put The 'Geo' Back Into Geopolitics.",
+  }
   ]
 
 
