@@ -189,27 +189,27 @@ router.get('/books',  (req, res, next) => {
 //   let allBooks = await Book.find()
 //   let data = res.send(req.params['id'])
 //   let book = allBooks[data]
-//   res.render('oneBook', { book })
+//   res.render('oneBook', { book })‚
 // });
-router.post("/addBooks", fileUploader.single("image"), (req, res, next) =>{
-  const {title,author,description}=req.body
-  console.log("here is the reqbody and here is the req file",req.body,req.file);
+ router.post("/addBooks", fileUploader.single("image"), (req, res, next) => {
+  const { title, author, description } = req.body
+
+  console.log("here is the req body and here is the req file", req.body, req.file);
+
   Book.create({
    title,
     author,
     description,
   // information provided in the body of our create form
-	image: req.file.path // cloudinary will send us the url of the image in the req.file.path. Once that you upload an image in your create form and the element  is created , If you console.log(req.file) you will be able to see how the information of our image is provided in your console.
-})
-.then((createdBook) =>{
-  console.log("this is the created book",createdBook);
-res.redirect("/userProfile")
-})
-.catch((err) =>{
-  console.log("Error", err)
-next(err)
-
-})
+	 image: req.file.path // cloudinary will send us the url of the image in the req.file.path. Once that you upload an image in your create form and the element  is created , If you console.log(req.file) you will be able to see how the information of our image is provided in your console.
+  })
+  .then((createdBook) => {
+    console.log("this is the created book", createdBook);
+    res.redirect("/userProfile")
+  })
+  .catch((err) =>{
+    console.log("Error", err)
+  })
 })
 
 

@@ -6,7 +6,8 @@ body{
   text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
-  background-color:#FDF7FF
+  background-color:#FDF7FF;
+  background-image: linear-gradient(to right bottom, #ff6f91, #ff7887, #ff817e, #ff8c76, #ff9671);
   } 
    .navbar {
      margin: 0px 30px 30px 30px;
@@ -31,6 +32,7 @@ body{
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  
 }
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
