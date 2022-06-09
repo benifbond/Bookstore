@@ -6,11 +6,11 @@ body{
  text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
-  background-color: #F8F8F8;
+  background-color:#FDF7FF
   } 
    .navbar {
-     margin: 0px;
-     padding: 20px;
+     margin: 0px 30px 30px 30px;
+     padding: 10px 30px 40px 40px;
    }
    
    /* LOGIN AND SINGUP FORM */
@@ -76,8 +76,8 @@ body{
 /* //////////////FOOTER///////// */
       .card-footer{
 
-          bottom:0;
-          min-width: 100%;
+        margin-bottom: 0;
+          width: 100%;
       }
       /* ///////////BENIAH LOGO ////////// */
 .logo{
