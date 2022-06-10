@@ -1,1 +1,38 @@
 <h1>Borrowed</h1>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">>
+    <div class="container-fluid shadow-sm row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row ">  
+        <% borrowedBooks.forEach(book => { %> 
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <a 
+        class="book-container"
+        rel="noreferrer noopener"
+      >
+        <div class="book">
+          <img class="userProfileImage img-fluid rounded-start"
+            alt="bookCover"
+            src="<%= book.image %>"
+            />
+        </div>
+      </a> <br>
+        <div class="card-body">
+          <div>
+            <h5> <%= book.title %></a></h5></div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <form action="/book/<%= book._id %>">
+            <button type="submit" class="btn btn-sm btn-outline-secondary">View</button>
+          </form>
+          <form action="/book/<%= book._id %>/edit">
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button></form>
+          </div>
+          <small class="text-muted"> </small>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>

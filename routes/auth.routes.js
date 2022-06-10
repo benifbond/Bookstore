@@ -10,6 +10,7 @@ const Book = require("../models/Book.model")
 const User = require("../models/User.model")
 
 const { findById } = require("../models/User.model")
+const UserModel = require("../models/User.model")
 
 router.get("/books/:id", async (req, res, next) => {
   const {id} = req.params.id;
@@ -156,19 +157,32 @@ router.post("/:id/delete", (req, res, next) => {
     .catch((err) => console.log("Err while deleting a celebrity: ", err));
 });
 
-
-router.get("/:id/delete", (req, res, next) => {
-
-  const { id } = req.params 
+router.get("/borrowed/:id", async (req, res) =>{
+  const {id} = req.params 
+  const userId = req.session.currentUser._id
   console.log(req.session.currentUser)
+  // record id book on user
+  // change status to be borrowed
+  // redirect to userProfile
+  try {await UserModel.findByIdAndUpdate(userId, {$push: {borrowedBooks: id}})
+  await Book.findByIdAndUpdate(id, {isBorrowed: true})
+  res.redirect("/userProfile")}
+  catch (err){
+    console.log(err, "ERROR")
+  }
+})
+// router.get("/:id/delete", (req, res, next) => {
 
-  Book.findByIdAndRemove(id)
-    .then((deletedBook) => {
-      console.log("Deleted celeb: ", deletedBook);
-      res.redirect("/userProfile")
-    })
-    .catch((err) => console.log("Err while deleting a celebrity: ", err));
-});
+//   const { id } = req.params 
+//   console.log(req.session.currentUser)
+
+//   Book.findByIdAndRemove(id)
+//     .then((deletedBook) => {
+//       console.log("Deleted celeb: ", deletedBook);
+//       res.redirect("/userProfile")
+//     })
+//     .catch((err) => console.log("Err while deleting a celebrity: ", err));
+// });
 
 // router.get("/new", (req, res, next) => {
 //   res.render("users/books/create.ejs"); 
@@ -216,6 +230,7 @@ router.get('/books',  (req, res, next) => {
    title,
     author,
     description,
+    isBorrowed : false,
   // information provided in the body of our create form
 	 image: req.file.path // cloudinary will send us the url of the image in the req.file.path. Once that you upload an image in your create form and the element  is created , If you console.log(req.file) you will be able to see how the information of our image is provided in your console.
   })
@@ -230,10 +245,10 @@ router.get('/books',  (req, res, next) => {
 
 router.get("/borrowed", async (req, res) =>{
   const userId = req.session.currentUser._id
-let user = await User.findOne({_id: userId})
-await user.populate("borrowedBooks.Book")
+let user = await User.findById(userId).populate("borrowedBooks")
+
 console.log("Populated", user)
-res.render('borrowed')
+res.render('borrowed', {borrowedBooks:user.borrowedBooks})
 })
 
 

@@ -22,7 +22,16 @@
     <div id="title-C"></div>
 </div>
 </div>
-<div class="oneBook-btn">
-  <a class="btn btn-primary btn-lg" role="button"  onclick="addToCart(oneBook)" href="/<%= oneBook._id %>/delete">Borrow </a>
-<a class="btn btn-primary btn-lg" href="/books" role="button">Insert</a>
-</div>
+ <% if (!oneBook.isBorrowed) { %>
+    <form action="/borrowed/<%= oneBook._id %>" mehod="GET">
+        <div class="oneBook-btn">
+        <button class="bor" type="submit"  onclick="addToCart(oneBook)">Borrow</button> 
+        </form>
+        
+ <% } %> 
+
+
+ <form action="/books">
+    <button class="insert" type="submit">Insert</button>
+  </div>
+  </form>

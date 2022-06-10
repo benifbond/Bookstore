@@ -23,7 +23,9 @@ const userSchema = new Schema(
       required: [true, 'Password is required.'],
     },
 
-    borrowedBooks : [{type: Schema.Types.ObjectId, ref: "Book"}]
+    
+
+    borrowedBooks : [{type: Schema.Types.ObjectId, ref: Book}]
   },
   {
     timestamps: true,
