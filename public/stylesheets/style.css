@@ -1,7 +1,4 @@
-html {
-  box-sizing: border-box;
 
-}
 h1 {
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 5rem;
@@ -28,20 +25,8 @@ body{
   text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
-  
   background-color:#F2F2F2; 
-/*  
- background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  } 
-   .navbar {
-     margin: 0px 30px 30px 30px;
-     padding: 10px 30px 40px 40px; 
-
-      background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa,)  */
-
-
-      /* background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */ */ */
-   }
+   } 
 
 
 /* /////////////////INDEX EJS//////// */
@@ -52,14 +37,10 @@ body{
 }
 
 .headIndex{
-  margin: 100px 0px ;
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  
+  margin: 50px 0px ;
+   background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); 
 }
-
-
-
 
    /* LOGIN AND SINGUP FORM */
 .form-signin {
@@ -130,76 +111,20 @@ body{
 }
 
 .oneBook {
-    margin: 70px;
+  margin: 24px;
     display: flex;
     padding: 50px;
     justify-content: center;
 }
-/* .book-img{
-  margin-right: 70px;
-
-} */
-
-
-/* ///////////////////////////css btn/////////////// */
-         
-.oneBook-btn .bor {
-  background-image: linear-gradient(to right, #f5cbc4 0%, #e73827  51%, #f85032  100%);
-  margin: 50px auto;
-  padding: 10px 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
+.oneBook-btn{
+  margin-bottom: 74px;
+    margin-right: -132px;
+    margin-top: 67px;
+}
+.btn .btn-primary{
+  padding: 0.1rem 1.5rem;
 }
 
-.bor:hover{
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-
-.insert{
-  background-image: linear-gradient(to right, #00c6ff 0%, #5fa7ff  51%, #00c6ff  100%);
-  margin: 40px auto;
-  padding: 10px 40px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.4s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px rgb(243, 239, 239);
-  border-radius: 15px;
-  display: block;
-}
-
-.insert:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: rgb(240, 234, 234);
-  text-decoration: none;
-}
-
-
-
-
-/* .oneBook-btn .insert{
-  /* background: #ffedf4;
-  font-size: 20px;
-  font-weight: 600; */
-  /* color: #252526; */
-  /* width: 170px;
-  /* border: #1f1f1f; */
-  /* padding: 5px; */
-  /* margin-left: 17px; */ */
-/* } */ */
-/* .oneBook-btn .insert:hover{
-color: tomato;
-} */
 .cart{
   width: 250px;
   float: right;
@@ -246,7 +171,9 @@ color: tomato;
 .book:hover {
   transform: rotateY(0deg);
 }
-
+.description {
+  margin: 50px;
+}
 .book > :first-child {
   position: absolute;
   top: 0;
@@ -307,8 +234,8 @@ color: tomato;
   box-shadow: -10px 0 50px 10px #666;
 }
 
-
-
-
-
-
+/* ///////////////////////////////// User profile card//////////////////////////////// */
+.userProfieCard{border-radius: 32px;
+  background: #dbdbdb;
+  box-shadow:  7px -7px 14px #a4a4a4,
+               -7px 7px 14px #ffffff;}

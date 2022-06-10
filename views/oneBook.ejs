@@ -22,12 +22,7 @@
     <div id="title-C"></div>
 </div>
 </div>
-<form action="/<%= oneBook._id %>/delete">
 <div class="oneBook-btn">
-<button class="bor" type="submit"  onclick="addToCart(oneBook)">Borrow</button> 
-</form>
-<form action="/books">
-  <button class="insert" type="submit">Insert</button>
+  <a class="btn btn-primary btn-lg" role="button"  onclick="addToCart(oneBook)" href="/<%= oneBook._id %>/delete">Borrow </a>
+<a class="btn btn-primary btn-lg" href="/books" role="button">Insert</a>
 </div>
-</form>
-
