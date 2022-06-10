@@ -29,18 +29,8 @@ body{
   margin: 0px;
   font-family: sans-serif,'Roboto';
   
-  background-color:#F2F2F2; 
-/*  
- background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  } 
-   .navbar {
-     margin: 0px 30px 30px 30px;
-     padding: 10px 30px 40px 40px; 
-
-      background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa,)  */
-
-
-      /* background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */ */ */
+  background-color:#F2F2F2;  
+ 
    }
 
 
