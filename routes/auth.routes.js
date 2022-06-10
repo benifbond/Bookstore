@@ -1,4 +1,4 @@
-const { Router } = require("express")
+const { Router, response } = require("express")
 const router = new Router()
 const fileUploader = require("../config/cloudinary.config")
 
@@ -143,19 +143,24 @@ Book.updateOne({_id: id}, edited)
  })
 router.post("/:id/delete", (req, res, next) => {
   const { id } = req.params 
-
-  Book.findByIdAndRemove(id)
-    .then((deletedBook) => {
-      console.log("Deleted celeb: ", deletedBook);
-      res.redirect("/")
+  const userId = req.session.currentUser._id
+  User.findByIdAndUpdate(userId, {$push: {borrowedBooks: [id]}} ) 
+  .then((response) => {
+  console.log("updated: ", response);
+  return Book.findByIdAndRemove(id)
+  })
+  .then((deletedBook) => {
+      console.log("Deleted book: ", deletedBook);
+      res.redirect("/userProfile")
     })
     .catch((err) => console.log("Err while deleting a celebrity: ", err));
 });
 
 
 router.get("/:id/delete", (req, res, next) => {
-  const { id } = req.params 
 
+  const { id } = req.params 
+  console.log(req.session.currentUser)
 
   Book.findByIdAndRemove(id)
     .then((deletedBook) => {
@@ -223,7 +228,13 @@ router.get('/books',  (req, res, next) => {
   })
 })
 
-
+router.get("/borrowed", async (req, res) =>{
+  const userId = req.session.currentUser._id
+let user = await User.findOne({_id: userId})
+await user.populate("borrowedBooks.Book")
+console.log("Populated", user)
+res.render('borrowed')
+})
 
 
 

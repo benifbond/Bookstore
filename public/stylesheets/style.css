@@ -25,8 +25,15 @@ body{
   text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
+<<<<<<< HEAD
   background-color:#F2F2F2; 
    } 
+=======
+  
+  background-color:#F2F2F2;  
+ 
+   }
+>>>>>>> 9935402f08dbf12ddc12c7ea24fa7bde40a9ec18
 
 
 /* /////////////////INDEX EJS//////// */
