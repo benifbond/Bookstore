@@ -1,6 +1,6 @@
 
-      <h1>Welcome</h1>
-      <div> <h2><%=userBooks.currentUser.username %></h2></div>
+      <h3>Welcome</h3> 
+       <h5><%=userBooks.currentUser.username %></h5>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">>
           <div class="container-fluid shadow-sm row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="row ">  
@@ -9,16 +9,28 @@
           </div>
           <div class="col-md-4">
             <div class="card">
-              <img class="userProfileImage img-fluid rounded-start"src="<%= book.image %>" alt="one">
-              <i class="far fa-heart"></i>
-                <h5> <%= book.title %></a></h5>
+              <a 
+              class="book-container"
+              rel="noreferrer noopener"
+            >
+              <div class="book">
+                <img class="userProfileImage img-fluid rounded-start"
+                  alt="bookCover"
+                  src="<%= book.image %>"
+                  />
+              </div>
+            </a> <br>
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div>
+                  <h5> <%= book.title %></a></h5></div>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/book/<%= book._id %>">View</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/book/<%= book._id %>/edit">Edit</a></button>
+                  <form action="/book/<%= book._id %>">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">View</button>
+                </form>
+                <form action="/book/<%= book._id %>/edit">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button></form>
                 </div>
                 <small class="text-muted"> </small>
               </div>

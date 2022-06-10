@@ -1,27 +1,72 @@
 html {
   box-sizing: border-box;
+
+}
+h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 5rem;
+  padding: 2rem;
+  margin: 0.5rem
+}
+h3 {
+  font-family: 'Patua One', cursive;
+  font-size: 3.5rem;
+  padding: 2rem;
+  margin: 0.5rem
+}
+h5{
+  font-family: 'Patua One', cursive;
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin: 0.5rem
+}
+h6{font-family: 'Tangerine', cursive;
+  font-size:60px
 }
 
 body{
   text-align: center;
   margin: 0px;
   font-family: sans-serif,'Roboto';
-  background-color:#FDF7FF;
-  background-image: linear-gradient(to right bottom, #ff6f91, #ff7887, #ff817e, #ff8c76, #ff9671);
+  
+  background-color:#F2F2F2; 
+/*  
+ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   } 
    .navbar {
      margin: 0px 30px 30px 30px;
-     padding: 10px 30px 40px 40px;
+     padding: 10px 30px 40px 40px; 
+
+      background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa,)  */
+
+
+      /* background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */ */ */
    }
+
+
+/* /////////////////INDEX EJS//////// */
+
+.navbar-nav li a {
+  font-size:30px
+  margin 20px 
+}
+
+.headIndex{
+  margin: 100px 0px ;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  
+}
+
+
+
+
    /* LOGIN AND SINGUP FORM */
 .form-signin {
   max-width: 330px;
   padding-top: 90px;
   height: 100%;
 }
-
-    
-
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -75,9 +120,9 @@ body{
       }
 /* //////////////FOOTER///////// */
       .card-footer{
-
-        margin-bottom: 0;
-          width: 100%;
+        bottom: 0;
+        width:100%;
+          padding: 20px;
       }
       /* ///////////BENIAH LOGO ////////// */
 .logo{
@@ -90,38 +135,71 @@ body{
     padding: 50px;
     justify-content: center;
 }
-.book-img{
+/* .book-img{
   margin-right: 70px;
 
+} */
+
+
+/* ///////////////////////////css btn/////////////// */
+         
+.oneBook-btn .bor {
+  background-image: linear-gradient(to right, #f5cbc4 0%, #e73827  51%, #f85032  100%);
+  margin: 50px auto;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
 }
 
-.oneBook-btn .bor{
-  background: #ff5f5f;
-  font-size: 20px;
-  font-weight: 600;
-  color: #252526;
-  padding: 5px;
-  width: 170px;
-  border: #ff5f5f;
-}
-.oneBook-btn .bor:hover {
-  color: white;
-  width: 170px;
+.bor:hover{
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
-.oneBook-btn .insert{
-  background: #ffedf4;
-  font-size: 20px;
-  font-weight: 600;
-  color: #252526;
-  width: 170px;
-  border: #1f1f1f;
-  padding: 5px;
-  margin-left: 17px;
+
+.insert{
+  background-image: linear-gradient(to right, #00c6ff 0%, #5fa7ff  51%, #00c6ff  100%);
+  margin: 40px auto;
+  padding: 10px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.4s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px rgb(243, 239, 239);
+  border-radius: 15px;
+  display: block;
 }
-.oneBook-btn .insert:hover{
+
+.insert:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(240, 234, 234);
+  text-decoration: none;
+}
+
+
+
+
+/* .oneBook-btn .insert{
+  /* background: #ffedf4;
+  font-size: 20px;
+  font-weight: 600; */
+  /* color: #252526; */
+  /* width: 170px;
+  /* border: #1f1f1f; */
+  /* padding: 5px; */
+  /* margin-left: 17px; */ */
+/* } */ */
+/* .oneBook-btn .insert:hover{
 color: tomato;
-}
+} */
 .cart{
   width: 250px;
   float: right;
@@ -134,3 +212,103 @@ color: tomato;
 .cartImg {
   width: 200px;
 }
+
+
+
+/* ///////////////////////////CRAZY CSS/////////////////// */
+.book-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 600px;
+}
+
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-30deg);
+  }
+}
+
+.book {
+  width: 200px;
+  height: 240px;
+  margin-top:40px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(-30deg);
+  transition: 1s ease;
+  animation: 1s ease 0s 1 initAnimation;
+}
+
+.book:hover {
+  transform: rotateY(0deg);
+}
+
+.book > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 200px;
+  height: 300px;
+  transform: translateZ(25px);
+  background-color: #01060f;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 5px 5px 20px #666;
+}
+
+.book::before {
+  position: absolute;
+  content: ' ';
+  background-color: blue;
+  left: 0;
+  top: 3px;
+  width: 48px;
+  height: 294px;
+  transform: translateX(172px) rotateY(90deg);
+  background: linear-gradient(90deg, 
+    #fff 0%,
+    #f9f9f9 5%,
+    #fff 10%,
+    #f9f9f9 15%,
+    #fff 20%,
+    #f9f9f9 25%,
+    #fff 30%,
+    #f9f9f9 35%,
+    #fff 40%,
+    #f9f9f9 45%,
+    #fff 50%,
+    #f9f9f9 55%,
+    #fff 60%,
+    #f9f9f9 65%,
+    #fff 70%,
+    #f9f9f9 75%,
+    #fff 80%,
+    #f9f9f9 85%,
+    #fff 90%,
+    #f9f9f9 95%,
+    #fff 100%
+    );
+}
+
+.book::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 200px;
+  height: 300px;
+  transform: translateZ(-25px);
+  background-color: #01060f;
+  border-radius: 0 2px 2px 0;
+  box-shadow: -10px 0 50px 10px #666;
+}
+
+
+
+
+
+

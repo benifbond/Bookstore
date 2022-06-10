@@ -1,4 +1,4 @@
-const { Mongoose } = require("mongoose");
+//const { Mongoose } = require("mongoose");
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -7,7 +7,7 @@ document.addEventListener(
   },
   false
 );
-Mongoose.find('')
+// Mongoose.find('')
 
 let addItemId = 0;
  function addToCart(){
