@@ -1,2 +1,36 @@
-<h1> <%= oneBook.title  %> </h1>
+<div class="oneBook">
+    <div class="book-img">
+  <a 
+  class="book-container"
+  rel="noreferrer noopener"
+>
+  <div class="book">
+    <img class="userProfileImage img-fluid rounded-start"
+      alt="bookCover"
+      src="<%= oneBook.image %>"
+      />
+  </div>
+</a>
+</div>
+  <div class="text">
+    <h3 class="title"> <%= oneBook.title  %> </h3>
+    <h5 class="author"> <%= oneBook.author  %> </h5>
+    <p class="description"><%= oneBook.description %></p>
+  </div>
+  <div class="cart" id="cart">
+    <div class="title-C">cart</div>
+    <div id="title-C"></div>
+</div>
+</div>
+ <% if (!oneBook.isBorrowed) { %>
+    <div class="oneBook-btn">
+        <a class="btn btn-primary btn-lg" role="button"  onclick="addToCart(oneBook)" href="/borrowed/<%= oneBook._id %>">Borrow </a>
+      
+      </div>
+        
+ <% } %> 
 
+
+  <div class="oneBook-btn">
+  <a class="btn btn-primary btn-lg" href="/books" role="button">Insert</a>
+  </div>

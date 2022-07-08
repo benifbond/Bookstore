@@ -5,7 +5,10 @@ const bookSchema = new mongoose.Schema({
     author: String,
     image: String,
     description: String,
-});
+    isBorrowed: Boolean,
+},
+
+);
 
 const Book = mongoose.model('Book', bookSchema);
 
